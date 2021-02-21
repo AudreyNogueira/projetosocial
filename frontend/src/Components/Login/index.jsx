@@ -45,7 +45,7 @@ const Login = (props) => {
             localStorage.setItem('auth',dados.tipo)
             localStorage.setItem('id',dados.id);
             history.push("/perfil");
-        } else if(dados!=login && dados!=senha) {
+        } else if(dados) {
             handleModal()
         }
     }

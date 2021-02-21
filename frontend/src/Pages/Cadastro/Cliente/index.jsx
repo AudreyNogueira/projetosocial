@@ -1,9 +1,8 @@
 import React from "react";
-
 import Input from "../../../Components/Input";
 import { enviarDados } from "../../../functions/database";
 
-const CadastroVendedor = () => {
+const CadastroCliente = () => {
 
     const initialState = () => {
         return(
@@ -39,6 +38,13 @@ const CadastroVendedor = () => {
             erros[dado.param] = true
         }
     }
+
+    if(dados===dados){
+        alert = true
+    }else{
+        alert = false
+    }
+
 
     console.log(dados)
 
@@ -105,6 +111,15 @@ const CadastroVendedor = () => {
                                 // msgErro={erros.senha.msg}
                                 msgErro={'* Campo obrigatório'}
                             />
+                            { alert && <div className="alert alert-success alert-dismissible fade show" role="alert" > 
+                            
+                            Cadastro efetuado com sucesso
+                             <button type="button"  onClick={() => alert = false } className="close" data-dismiss="alert" aria-label="Close">
+    
+                              <span aria-hidden="true">×</span>
+                             </button>
+                            </div> }
+
                             <br />
                             <button className="btn btn-primary btn-lg btn-block" type="submit">
                                 Confirmar cadastro
@@ -118,4 +133,4 @@ const CadastroVendedor = () => {
     );
 }
 
-export default CadastroVendedor;
+export default CadastroCliente;

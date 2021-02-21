@@ -45,10 +45,14 @@ const CadastroVendedor = () => {
     if(dados) {
         for (const dado of dados) {
             erros[dado.param] = true
-            
+
         }
     }
-
+    if(dados===dados){
+        alert = true
+    }else{
+        alert = false
+    }
     console.log(dados)
 
     return (
@@ -167,6 +171,15 @@ const CadastroVendedor = () => {
                                 msgErro={'* Campo obrigatório'}
                             />
                             <br />
+                            { alert && <div className="alert alert-success alert-dismissible fade show" role="alert" > 
+                            
+                            Cadastro efetuado com sucesso
+                             <button type="button"  onClick={() => alert = false } className="close" data-dismiss="alert" aria-label="Close">
+    
+                              <span aria-hidden="true">×</span>
+                             </button>
+                            </div> }
+
                             <button className="btn btn-primary btn-lg btn-block" type="submit">
                                 Confirmar cadastro
                             </button>
